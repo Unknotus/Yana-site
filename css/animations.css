@@ -1,0 +1,74 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes press {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.96);
+  }
+}
+
+@keyframes floatHint {
+  0% { transform: translateY(0) translateX(-50%); opacity: 0.95; }
+  50% { transform: translateY(-6px) translateX(-50%); opacity: 1; }
+  100% { transform: translateY(0) translateX(-50%); opacity: 0.95; }
+}
+
+.page-card,
+.page-meta,
+.page-heading,
+.page-text,
+.page-legend {
+  animation: fadeUp 0.55s ease-out both;
+}
+
+.gif-frame {
+  animation: drift 4s ease-in-out infinite;
+}
+
+.swipe-hint {
+  position: fixed;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom) + 12px);
+  transform: translateX(-50%);
+  background: rgba(167, 139, 250, 0.08);
+  color: var(--accent-strong);
+  padding: 8px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 20px rgba(167,139,250,0.08);
+  animation: floatHint 2.6s ease-in-out infinite;
+}
+
+.swipe-hint .chev {
+  display: inline-block;
+  font-size: 1.35rem;
+  transform: translateY(0);
+}
+
+.swipe-hint.hide {
+  opacity: 0; pointer-events: none; transform: translateY(8px) translateX(-50%); transition: opacity 0.35s ease, transform 0.35s ease;
+}

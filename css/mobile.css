@@ -1,0 +1,103 @@
+@media (max-width: 460px) {
+  .app-shell {
+    padding-left: max(env(safe-area-inset-left), 14px);
+    padding-right: max(env(safe-area-inset-right), 14px);
+  }
+
+  .page-card {
+    padding: 22px 16px;
+    gap: 16px;
+    max-width: calc(100% - 32px);
+    margin: 0 8px;
+  }
+
+  .page-text {
+    font-size: 0.98rem;
+  }
+
+  .nav-bar {
+    gap: 12px;
+  }
+
+  /* Hide the next/start button on the first page for small screens */
+  .app-shell.first-page .nav-next {
+    display: none !important;
+  }
+
+  /* Slightly smaller buttons on very small screens */
+  .nav-button, .button-primary, .button-secondary {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .gif-frame {
+    max-width: 260px;
+    border-radius: 20px;
+  }
+
+  .date-option {
+    padding: 14px 12px;
+    min-height: 72px;
+  }
+}
+
+/* Extra safe adjustments for very narrow screens */
+@media (max-width: 400px) {
+  .app-shell {
+    padding-left: max(env(safe-area-inset-left), 10px);
+    padding-right: max(env(safe-area-inset-right), 10px);
+  }
+
+  .page-card {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 12px;
+    gap: 12px;
+    border-radius: 20px;
+    max-width: calc(100% - 20px);
+    margin: 0 6px;
+    /* ensure content doesn't hide behind bottom nav */
+    padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 18px);
+    /* allow internal scrolling on very short viewports */
+    max-height: calc(100dvh - var(--topbar-height) - var(--nav-height) - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 28px);
+    overflow: auto;
+  }
+
+  .page-heading {
+    font-size: 1.6rem;
+  }
+
+  /* keep actions pinned to the bottom of the card */
+  .page-actions { margin-top: auto; }
+
+  .gif-frame {
+    max-width: 200px;
+  }
+
+  .nav-button, .button-primary, .button-secondary {
+    padding: 10px 12px;
+    font-size: 0.92rem;
+  }
+
+  .progress-label {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-height: 640px) {
+  .app-shell {
+    padding-top: 12px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 12px);
+  }
+
+  .page-view {
+    min-height: calc(100dvh - 156px);
+  }
+}
+
+@media (max-height:700px){
+  .gif-frame{
+    max-width:180px;
+  }
+}
+

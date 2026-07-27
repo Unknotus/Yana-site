@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Yana Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="progress-shell">
+          <div class="progress-label">
+            <span id="progressCounter">1 / 8</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-view" id="pageView" role="region" aria-label="Приглашение Яне">
+        <div class="page-list" id="pageList"></div>
+      </main>
+
+      <div class="swipe-hint" id="swipeHint" aria-hidden="true">
+        <span class="chev" aria-hidden="true">›</span>
+        <span class="hint-text">Листай</span>
+      </div>
+    </div>
+
+    <script>
+      // Simple error overlay to show runtime errors when testing locally
+      (function () {
+        function showError(msg) {
+          let el = document.getElementById('errorOverlay');
+          if (!el) {
+            el = document.createElement('div');
+            el.id = 'errorOverlay';
+            el.style.position = 'fixed';
+            el.style.left = '12px';
+            el.style.right = '12px';
+            el.style.top = '12px';
+            el.style.padding = '14px 16px';
+            el.style.zIndex = 999999;
+            el.style.background = 'rgba(255,255,255,0.98)';
+            el.style.border = '1px solid rgba(200,30,30,0.12)';
+            el.style.boxShadow = '0 10px 30px rgba(0,0,0,0.06)';
+            el.style.borderRadius = '12px';
+            el.style.color = '#6b1121';
+            el.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+            el.style.fontSize = '13px';
+            el.style.whiteSpace = 'pre-wrap';
+            document.body.appendChild(el);
+          }
+          el.textContent = String(msg);
+        }
+
+        window.addEventListener('error', function (ev) {
+          showError('Error: ' + (ev && ev.message) + '\nAt: ' + (ev && ev.filename) + ':' + (ev && ev.lineno));
+          console.error(ev.error || ev.message);
+        });
+
+        window.addEventListener('unhandledrejection', function (ev) {
+          const reason = ev.reason || ev;
+          showError('Unhandled rejection: ' + (reason && reason.message ? reason.message : String(reason)));
+          console.error('Unhandled rejection', ev);
+        });
+      })();
+    </script>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+html,
+body{
+    height:100%;
+    margin:0;
+}
+
+body{
+    background:var(--bg);
+}
+
+.app-shell{
+    height:100dvh;
+    max-width:430px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+.topbar {
+  padding-top: 16px;
+}
+
+.progress-shell {
+  display: grid;
+  gap: 12px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.progress-track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(167, 139, 250, 0.16);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 12.5%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  transition: width 0.45s ease;
+}
+
+.page-view {
+  flex: 1;
+  min-height: calc(100dvh - 180px);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-list {
+  display: flex;
+  transition: transform .6s ease;
+
+}
+
+.page {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.page-card {
+  width: 100%;
+    max-width: 380px;
+    max-height: 100%;
+    overflow-y: auto;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    display: grid;
+    gap: 22px;
+  }
+
+.page-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-meta .emoji {
+  font-size: 1.28rem;
+}
+
+.page-heading {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5.5vw, 2.7rem);
+  line-height: 1.05;
+}
+
+.page-text {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.page-highlight {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.page-actions {
+  display: grid;
+  gap: 14px;
+}
+
+.button-primary,
+.button-secondary,
+.nav-button,
+.date-option {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-primary,
+.nav-next {
+  background: var(--accent);
+  color: white;
+  padding: 16px 20px;
+  font-size: 1rem;
+  box-shadow: 0 18px 40px rgba(167, 139, 250, 0.22);
+}
+
+.button-primary:hover,
+.nav-next:hover,
+.date-option:hover {
+  background: var(--accent-strong);
+}
+
+.button-secondary,
+.nav-back {
+  background: rgba(167, 139, 250, 0.08);
+  color: var(--text);
+  padding: 14px 18px;
+}
+
+.button-primary:active,
+.nav-button:active,
+.date-option:active {
+  animation: press 0.18s ease;
+}
+
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.date-option {
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 18px 16px;
+  text-align: left;
+  min-height: 96px;
+}
+
+.date-option strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.page-legend {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.gif-frame {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.14), rgba(167, 139, 250, 0.04));
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(167, 139, 250, 0.14);
+  overflow: hidden;
+      margin:auto;
+}
+
+.gif-frame img,
+.gif-frame .gif-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gif-icon {
+  font-size: 5rem;
+}
+
+/* Choice button base and selected state */
+.choice-button {
+  background: var(--surface-soft);
+  border: 1px solid rgba(15,15,15,0.03);
+  padding: 18px 12px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.choice-button.selected,
+.date-option.selected {
+  background: var(--accent-strong) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 28px rgba(149,117,244,0.18);
+}
+
+.recorder-status {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+
+.nav-bar {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 4px;
+  min-height: var(--nav-height);
+}
+
+.nav-button {
+  flex: 1;
+}
+
+.nav-back {
+  max-width: 96px;
+}
+
+.page-number {
+  opacity: 0.75;
+  font-size: 0.92rem;
+}

@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-soft: #f5f0ff;
+  --text: #1f1f26;
+  --muted: #6f6f88;
+  --accent: #a78bfa;
+  --accent-strong: #9575f4;
+  --shadow: 0 15px 40px rgba(15, 15, 15, 0.06);
+  --radius: 32px;
+  --radius-sm: 20px;
+  --border: rgba(15, 15, 15, 0.04);
+  --max-width: 430px;
+  --nav-height: 92px;
+  --topbar-height: 92px;
+  --font-family: 'Manrope', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(167, 139, 250, 0.12) 0%, transparent 35%),
+    var(--bg);
+  color: var(--text);
+}
+
+body {
+  overflow: hidden;
+  font-family: var(--font-family);
+}
+
+button {
+  font: inherit;
+}
