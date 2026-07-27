@@ -41,7 +41,7 @@ export const pages = [
   {
     title: 'Вопрос 2',
     subtitle: 'Чем планируешь заниматься вечером?',
-    text: 'Выбери один вариант, или напиши коротко в комментарии позже.',
+    text: 'Выбери один вариант.',
             gif: 'assets/images/89.gif',
     emoji: '🌙',
     questionId: 'evening',
